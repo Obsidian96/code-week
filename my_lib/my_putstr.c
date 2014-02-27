@@ -1,5 +1,5 @@
+#include <my_lib.h>
 #include <unistd.h>
-#include <my_putstr.h>
 
 void	my_putstr(char *str)
 {

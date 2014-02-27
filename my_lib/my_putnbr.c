@@ -1,5 +1,4 @@
-#include <my_putnbr.h>
-#include <my_putchar.h>
+#include <my_lib.h>
 
 void	my_putnbr(int nbr)
 {

@@ -1,5 +1,5 @@
+#include <my_lib.h>
 #include <unistd.h>
-#include <my_putchar.h>
 
 void my_putchar(char c)
 {

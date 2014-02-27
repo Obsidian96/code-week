@@ -1,4 +1,4 @@
-#include <my_getnbr.h>
+#include <my_lib.h>
 
 int	my_getnbr(char *str)
 {
