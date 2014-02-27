@@ -4,7 +4,7 @@
 void* xmalloc(int size)
 {
   void *ptr;
-  if (!ptr = malloc(size))
+  if (!(ptr = malloc(size)))
     exit(1); 
   return (ptr);
 }

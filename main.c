@@ -1,4 +1,4 @@
-#include <my_str_to_wordtab.h>
+#include <my_lib.h>
 
 struct	commande
 {
