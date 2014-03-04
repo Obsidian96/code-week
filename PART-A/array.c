@@ -2,12 +2,12 @@
 #include <stdio.h>
 #include <time.h>
 
-void    my_putchar(char c)
+void	my_putchar(char c)
 {
   write(1, &c, 1);
 }
 
-void     my_putstr(char *str)
+void	my_putstr(char *str)
 {
   int	n;
 
@@ -19,51 +19,67 @@ void     my_putstr(char *str)
     }
 }
 
-
-int     printArray(char **array, int min, int max)
+int     wallGenerator(char **array)
 {
-  int	a;
-  int	b;
   int	i;
   int	j;
-
-     for(i = 0; i < 16; i = i + 1)
-     {
-      a = ( rand() % (max - min + 1) ) + min;
-      b = ( rand() % (max - min + 1) ) + min;
-	array[a][b] = '#';
-
-       for(i = 0; i < 9; i = i + 1)
-
-  {      for(j = 0; j < 9; j = j + 1)
-
-        {
-	  array[i][j] = '-';
-	  array[0][j] = '#';
-	  array[i][0] = '#';
-	  array[8][j] = '#';
-	  array[i][8] = '#';
- 	}
-  }  
-     }
-	for(i = 0; i < 9; i = i + 1)
-       {
-	  for(j = 0; j < 9; j = j + 1)
-	    {
-	      my_putchar(array[i][j]);
-              my_putstr("  ");	      
-	    }
-	  my_putstr("\n");
-       }
+  i = 0;
+  j = 0;
+  while(i < 9)
+    {
+      j = 0;
+      while(j < 9)
+	{    
+	  array[i][j] = '#';
+	  j = j + 1;
+	} 
+      i = i + 1;  
+    }
+  i = 0;
+  j = 0;
+}
+ 
+int	printArray(char ** array)
+{
+  int	i;
+  int	j;
+  i = 0;
+  while(i < 9)
+    {
+      j = 0;
+      while(j < 9)
+	{
+      	  my_putchar(array[i][j]);
+	  my_putstr(" ");
+	  j = j + 1;
+	}
+      my_putstr("\n");
+      i = i + 1;
+    }
 }
 
-void	randomArray(int min, int max, char **array)
+int	mapGenerator(char **array)
 {
-	int	a;
-	int	b;
-   max = 7;
-   min = 1;
+  int   a;
+  int   b;
+  int	i;
+  i = 0;
   srand(time(NULL));
-   a = ( rand() % (max - min + 1) ) + min;
-   b = ( rand() % (max - min + 1) ) + min;
+
+  while (i < 30)
+    {
+      a = ( rand() % (7) ) + 1;
+      b = ( rand() % (7) ) + 1;
+      array[a][b] = ' ';
+      i = i + 1;
+    }
+  a = ( rand() % (6) ) + 2; 
+  b = ( rand() % (6) ) + 2;
+ 
+  array[4][4] = 'X';
+  array[4][5] = ' '; 
+  array[5][4] = ' ';
+  array[3][4] = ' ';
+  array[4][3] = ' ';
+  array[a][b] = '*'; 
 }
